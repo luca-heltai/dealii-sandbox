@@ -2,5 +2,13 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "Experimental deal.II Image",
-	"image": "dealii/dealii:master-focal"
+	"image": "dealii/dealii:master-focal",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools"
+			]
+		}
+	}
 }

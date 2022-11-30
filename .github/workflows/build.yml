@@ -1,0 +1,20 @@
+name: Test building of step-40 of deal.II
+on: [push]
+jobs:
+  test-docker-image:
+    runs-on: ubuntu-latest
+    container: dealii/dealii:master-focal
+
+    steps:
+     - name: Check out repository
+       uses: actions/checkout@v3
+     - name: Test that we can build step-40 in debug mode
+       run: |
+          mkdir build-debug
+          cd build-debug
+          cmake -GNinja ../ -DCMAKE_BUILD_TYPE=Debug
+     - name: Test that we can build step-40 in release mode
+       run: |
+          mkdir build-release
+          cd build-release
+          cmake -GNinja ../ -DCMAKE_BUILD_TYPE=Release
