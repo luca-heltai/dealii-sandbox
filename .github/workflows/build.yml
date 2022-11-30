@@ -12,9 +12,9 @@ jobs:
        run: |
           mkdir build-debug
           cd build-debug
-          cmake -GNinja ../ -DCMAKE_BUILD_TYPE=Debug
+          cmake -GNinja ../step-40 -DCMAKE_BUILD_TYPE=Debug
      - name: Test that we can build step-40 in release mode
        run: |
           mkdir build-release
           cd build-release
-          cmake -GNinja ../ -DCMAKE_BUILD_TYPE=Release
+          cmake -GNinja ../step-40 -DCMAKE_BUILD_TYPE=Release
