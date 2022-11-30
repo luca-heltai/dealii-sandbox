@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build-test:
     runs-on: ubuntu-latest
-    container: dealii/dealii:master-focal-root
+    container: dealii/dealii:master-focal
 
     steps:
      - name: Check out repository
@@ -13,8 +13,10 @@ jobs:
           mkdir build-debug
           cd build-debug
           cmake -GNinja ../step-40 -DCMAKE_BUILD_TYPE=Debug
+          ninja
      - name: Test that we can build step-40 in release mode
        run: |
           mkdir build-release
           cd build-release
           cmake -GNinja ../step-40 -DCMAKE_BUILD_TYPE=Release
+          ninja
