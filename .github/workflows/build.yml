@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build-test:
     runs-on: ubuntu-latest
-    container: dealii/dealii:master-focal
+    container: dealii/dealii:master-focal-root
 
     steps:
      - name: Check out repository
