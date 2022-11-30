@@ -1,9 +1,9 @@
 name: Test building of step-40 of deal.II
 on: [push]
 jobs:
-  test-docker-image:
+  build-test:
     runs-on: ubuntu-latest
-    container: dealii/dealii:master-focal
+    container: dealii/dealii:master-focal-root
 
     steps:
      - name: Check out repository
